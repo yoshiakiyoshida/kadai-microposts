@@ -33,10 +33,8 @@ class User < ApplicationRecord
     Micropost.where(user_id: self.following_ids + [self.id])
   end
 
-  def like(other_user)
-    unless self == other_user
-      self.favorites.find_or_create_by(user_id: other_user.id)
-    end
+  def like(micropost)
+      self.favorites.find_or_create_by(micropost_id: micropost.id)
   end
   
   def unlike(other_user)
