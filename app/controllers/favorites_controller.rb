@@ -21,8 +21,4 @@ class FavoritesController < ApplicationController
     redirect_to current_user
   end
   
-  def likes
-    @Favorites = Favorite.where(user_id:current_user.id)
-  end
-  
 end
