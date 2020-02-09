@@ -20,4 +20,9 @@ class FavoritesController < ApplicationController
     flash[:success] = '投稿のお気に入りを解除しました。'
     redirect_to current_user
   end
+  
+  def likes
+    @Favorites = Favorite.where(user_id:current_user.id)
+  end
+  
 end

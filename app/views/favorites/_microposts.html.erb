@@ -1,0 +1,11 @@
+  <ul class="list-unstyled">
+    <% Microposts.each do |micropost| %>
+      <li class="media">
+        <div class="media-body">
+          <div>
+            <%= micropost.content %>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
